@@ -1,13 +1,588 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Poppins', sans-serif;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.heading {
+  text-align: center;
+  font-size: 46px;
+  line-height: 58px;
+  font-weight: 600;
+  letter-spacing: 0px;
+  color: #1E1B1B;
+  opacity: 1;
+  margin-bottom: 2rem;
+
+}
+
+.sub_heading {
+  text-align: center;
+  font-size: 20px;
+  line-height: 29px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #5D6065;
+  opacity: 1;
+  margin-bottom: 0;
+}
+
+.acc_navbar {
+  background-color: #fff;
+  padding: 27px 0px !important;
+  box-shadow: 0px 0px 5px #00000026;
+  position: absolute !important;
+  z-index: 999 !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top .4s linear;
+}
+
+
+
+.acc_navbar.active {
+  background-color: #fff;
+  animation: move .5s ease-in-out;
+  box-shadow: 0 0 5px #cfcfcfa6;
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
+@keyframes move {
+
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 0px;
+  }
+}
+
+.acc_navbar a {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.accordionTable {
+  padding-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1170px !important;
+  padding: 70px 20px 0;
+  width: 100% !important;
+  z-index: 99;
+}
+
+
+.TableSection .gridSection {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background-color: #fff !important;
+  justify-content: center;
+  position: sticky;
+  top: 103px;
+  z-index: 99;
+}
+
+.gridSection .TableHeadingOne {
+  align-items: center;
+  border-radius: 15px;
+  display: flex;
+  margin-right: 15px;
+  padding: 12px 14px;
+  background-color: #eff0ff;
+}
+
+.tableHead p {
+  text-align: left;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  margin-bottom: 4px;
+}
+
+.tableHead a {
+  text-align: left;
+  font-size: 18px;
+  letter-spacing: 0px;
+  color: #0014FF;
+  opacity: 1;
+}
+
+.gridSection .TableHeadingOne .TableImg {
+  width: 135px;
+}
+
+.gridSection .tabletitle {
+  margin-bottom: 0px;
+}
+
+.gridSection .TableHeadingTwo {
+  align-items: center;
+  border: 1px solid #ecdcea;
+  color: #1e1b1b;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  text-align: center;
+  border-top-left-radius: 15px;
+  height: 140px;
+}
+
+.gridSection .TableHeadingThree {
+  align-items: center;
+  border: 1px solid #ecdcea;
+  color: #1e1b1b;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  text-align: center;
+  border-top-right-radius: 15px;
+  height: 140px;
+  border-left: inherit;
+}
+
+.tableSection Table {
+  margin-bottom: 0 !important;
+}
+
+.tableSection .accordion-button:focus {
+  z-index: 3;
+  border-color: transparent !important;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.tableSection .accordion-button::after {
+  background-image: url("./img/up.png") !important;
+  background-size: 27px !important;
+  width: 29px;
+  height: 23px;
+  background-repeat: no-repeat;
+}
+
+.tableSection .accordion-button, .tableSection .accordion-button.collapsed {
+  padding: 24px 24px;
+  background-color: #0014FF !important;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  letter-spacing: 0px;
+  color: #FFFFFF !important;
+  opacity: 1;
+
+}
+
+.tableSection .accordion-item {
+  border: none !important;
+}
+
+
+.tableSection .accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.tableSection .accordion-item:first-of-type .accordion-button.collapsed {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.tableSection .accordion-item:last-of-type .accordion-button {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.tableSection .accordion-item:last-of-type .accordion-button.collapsed {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.tableSection .accordion {
+  border-radius: 0px !important;
+}
+
+.tableSection .accordion-header {
+  border-radius: 0px !important;
+}
+
+.tableSection .accordion-body {
+  padding: 0px;
+}
+
+.tableSection tbody tr td>p {
+  font-size: 23px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.tableSection tbody tr td:nth-child(1)>p {
+  padding: 0px 0px 0px 12px;
+}
+
+.tableSection tbody tr td:nth-child(1) {
+  text-align: left !important;
+}
+
+.tableSection tbody tr td:nth-child(1) {
+  border-right: 1px solid #ccc;
+}
+
+.tableSection tbody tr td:nth-child(3) {
+
+  border-left: 1px solid #ccc;
+}
+
+.tableSection tbody tr td {
+  vertical-align: middle;
+  height: 92px;
+  text-align: center;
+  width: 300px;
+}
+
+.tableSection tbody tr {
+  border: none;
+}
+
+.tableSection .ColColor tbody tr:nth-child(even) {
+  background-color: #F6F6FF;
+}
+
+
+
+
+/* ///////////swiper acc///////// */
+
+
+
+.swiperaccordion {
+  background: transparent linear-gradient(269deg, #F7E8FF 0%, #EFF4FF 100%) 0% 0% no-repeat padding-box;
+  margin-bottom: 30rem;
+}
+
+
+.mySwiper img {
+  width: 320px !important;
+  height: 100%;
+}
+
+.mySwiper .swiper-slide {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mySwiper .swiper-pagination {
+  bottom: 10px;
+  left: 0 !important;
+  width: 0% !important;
+  top: 30%;
+}
+
+
+.swiperaccordion {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.SliderSection .accordionAbsolute {
+  position: absolute;
+  top: 9%;
+  z-index: 2;
+
+}
+
+.swiperaccordion .morefeatures {
+  position: absolute;
+  bottom: 7%;
+  text-align: left;
+  font-size: 18px;
+  letter-spacing: 0px;
+  color: #1E1B1B;
+  opacity: 1;
+  z-index: 5;
+}
+
+.SliderSection .accordionAbsolute .Accsmall {
+  text-align: left;
+  letter-spacing: 0px;
+  color: #0014FF;
+  opacity: 1;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+
+}
+
+.SliderSection .accordionAbsolute .AccHead {
+  text-align: left;
+  font-weight: 600;
+  font-size: 46px;
+  letter-spacing: 0px;
+  color: #1E1B1B;
+  opacity: 1;
+  margin-bottom: 1.7rem;
+}
+
+.accordionAbsolute .ButtonGroup {
+  display: flex;
+  align-items: center;
+}
+
+.ButtonGroup .BtnRider {
+  padding: 12px 48px;
+  border-radius: 25px;
+  color: #fff;
+  margin-right: 20px;
+  font-size: 14px;
+  opacity: 1;
+}
+
+.ButtonGroup .BtnDriver {
+  padding: 12px 48px;
+  border-radius: 25px;
+  color: blue;
+  font-size: 14px;
+}
+
+.ButtonGroup .BtnRider.on {
+  background: #0014FF !important;
+  color: #fff !important;
+}
+
+.ButtonGroup .BtnRider.off {
+  background-color: transparent !important;
+  color: blue !important;
+  box-shadow: 0px 10px 18px #F44C4C0D;
+}
+
+.ButtonGroup .BtnDriver.offdriver {
+  background-color: transparent !important;
+  color: blue !important;
+  box-shadow: 0px 10px 18px #F44C4C0D;
+}
+
+.ButtonGroup .BtnDriver.ondriver {
+  background-color: #0014FF !important;
+  color: #fff !important;
+}
+
+.mySwiper .swiper-pagination .swiper-pagination-bullet {
+  display: flex;
+  flex-direction: row;
+  padding: 21px 0px;
+  height: auto;
+  border-radius: inherit;
+  width: 583px;
+  background: transparent;
+  margin: 0px !important;
+  border-top: 1px solid #ccc;
+  opacity: 1;
+}
+
+.mySwiper.one .swiper-pagination .swiper-pagination-bullet {
+  display: flex;
+  flex-direction: row;
+  padding: 21px 0px;
+  height: auto;
+  border-radius: inherit;
+  width: 583px;
+  background: transparent;
+  margin: 0px !important;
+  border-top: 1px solid #ccc;
+  opacity: 1;
+}
+
+.AccSlide .slideAcc {
+  display: flex;
+  justify-content: space-between;
+  width: 583px;
+}
+
+/* .page .swiper-pagination-bullet-active .SlideArrow {
+  background-image: url('./img/Vector\ \(1\).svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: rotate(180deg) !important;
+
+} */
+
+.page.swiper-pagination-bullet .SlideArrow .arrowimg {
+  width: 14px !important;
+  margin-right: 27px;
+
+}
+
+.page.swiper-pagination-bullet-active .SlideArrow .arrowimg {
+  transform: rotate(180deg);
+
+}
+
+
+.AccSlide .acchead {
+  text-align: left;
+  font-size: 18px;
+  letter-spacing: 0px;
+  color: #1E1B1B;
+  opacity: 1;
+  font-weight: 600;
+
+}
+
+.AccSlide .accorsub {
+  text-align: left;
+  font-size: 16px;
+  letter-spacing: 0px;
+  color: #1E1B1B;
+  opacity: 1;
+  padding: 10px 50px 16px 0px;
+  margin-bottom: 0;
+}
+
+.mySwiper .sliderContent {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-left: auto;
+}
+
+.mySwiper .none {
+  display: none !important;
+}
+
+.mySwiper .swiper-pagination-bullet-active .none {
+
+  display: block !important;
+}
+
+@media (max-width: 1365px) and (min-width: 1200px) {
+  .container {
+    max-width: 1140px !important;
+  }
+}
+
+@media screen and (max-width:1200px) {
+  .container {
+    padding: 40px 20px 0 !important;
+  }
+
+  .mySwiper .sliderContent {
+    display: none;
+  }
+
+  .SliderSection .accordionAbsolute {
+    position: relative;
+    padding-bottom: 2rem;
+  }
+
+  .mySwiper .swiper-pagination {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+  }
+
+  .AccSlide .slideAcc {
+    width: 100% !important;
+  }
+
+
+  .mySwiper.one .swiper-pagination .swiper-pagination-bullet {
+    width: 100% !important;
+    display: block;
+  }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+
+  .gridSection .TableHeadingOne .TableImg {
+    width: 80px;
+    margin-right: 3px;
+  }
+
+  .accordionTable .TableSection {
+    margin-top: 2.5rem;
+  }
+
+  .tableHead a {
+    font-size: 15px;
+
+  }
+
+
+}
+
+
+@media screen and (min-width:991px) {
+  .accordionTable .TableSection {
+    margin-top: 5.5rem;
+  }
+}
+
+
+@media screen and (max-width:991px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width:767px) {
+
+  .TableSection .gridSection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    background-color: #fff !important;
+    justify-content: center;
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+    width: 900px;
+  }
+
+  .TableSection .tableSection {
+    width: 900px;
+  }
+
+  .accordionTable .TableSection {
+    overflow-x: scroll;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .tableHead a {
+    font-size: 20px;
+
+  }
+
+  .container {
+    width: 100% !important;
+
+  }
+
+  .heading {
+    font-size: 25px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0rem;
+
+  }
+
+  .sub_heading {
+    text-align: center;
+    font-size: 14px;
+    color: #0000006e;
+    font-weight: 500;
+  }
 }

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44" height="46" viewBox="0 0 44 46">
+  <defs>
+    <filter id="Ellipse_267" x="0" y="2" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_9282" data-name="Group 9282" transform="translate(0.942 -0.057)">
+    <g id="Group_9209" data-name="Group 9209">
+      <circle id="Ellipse_10" data-name="Ellipse 10" cx="21" cy="21" r="21" transform="translate(0.057 0.057)" fill="#ffe1e3"/>
+      <circle id="Ellipse_11" data-name="Ellipse 11" cx="10" cy="10" r="10" transform="translate(11.057 11.057)" fill="#f60013"/>
+    </g>
+    <g id="toggle_icon" data-name="toggle icon" transform="translate(8.099 8.099)">
+      <g transform="matrix(1, 0, 0, 1, -9.04, -8.04)" filter="url(#Ellipse_267)">
+        <circle id="Ellipse_267-2" data-name="Ellipse 267" cx="13" cy="13" r="13" transform="translate(9 8)" fill="#fff"/>
+      </g>
+      <g id="done_icon" data-name="done icon" transform="translate(2.646 2.648)">
+        <path id="Path_21484" data-name="Path 21484" d="M203.047,1002.992c-.015.035-.03.07-.046.1a.456.456,0,0,1-.683.176,1.158,1.158,0,0,1-.137-.123q-2.467-2.466-4.933-4.933a.966.966,0,0,1-.083-.11l-.055-.015a.558.558,0,0,1-.071.119q-2.477,2.48-4.956,4.959a.494.494,0,0,1-.5.175.455.455,0,0,1-.25-.717,1.2,1.2,0,0,1,.116-.128l4.926-4.923c.035-.035.077-.063.125-.1-.046-.048-.076-.081-.108-.113q-2.483-2.482-4.967-4.964a.487.487,0,0,1-.153-.55.513.513,0,0,1,.335-.291h.185a2.547,2.547,0,0,1,.34.245q2.457,2.448,4.907,4.9a.711.711,0,0,1,.077.114h.054a.721.721,0,0,1,.077-.114q2.452-2.454,4.907-4.9a2.545,2.545,0,0,1,.34-.244h.185a.546.546,0,0,1,.369.369v.185a2.546,2.546,0,0,1-.245.34q-2.449,2.457-4.905,4.906a.709.709,0,0,1-.114.077c0,.018,0,.036,0,.054a.713.713,0,0,1,.114.077q2.455,2.451,4.905,4.906a2.545,2.545,0,0,1,.245.34Z" transform="translate(-186.829 -987.146)" fill="#f60013" stroke="#f60013" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
