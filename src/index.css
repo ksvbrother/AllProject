@@ -75,7 +75,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1170px !important;
-  padding: 70px 20px 0;
+  padding: 70px 20px;
   width: 100% !important;
   z-index: 99;
 }
@@ -267,43 +267,118 @@ body {
 
 .swiperaccordion {
   background: transparent linear-gradient(269deg, #F7E8FF 0%, #EFF4FF 100%) 0% 0% no-repeat padding-box;
-  margin-bottom: 30rem;
+  margin-bottom: 2rem;
 }
 
 
-.mySwiper img {
+.mySwiper img, .mySwiper1 img {
   width: 320px !important;
   height: 100%;
 }
 
-.mySwiper .swiper-slide {
+.mySwiper .swiper-slide, .mySwiper1 .swiper-slide {
   display: flex;
   justify-content: flex-end;
 }
 
-.mySwiper .swiper-pagination {
-  bottom: 10px;
+.mySwiper .swiper-pagination, .mySwiper1 .swiper-pagination {
   left: 0 !important;
-  width: 0% !important;
   top: 30%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 50% !important;
+
+
 }
 
-
-.swiperaccordion {
+.SliderSwiper .swiperaccordion {
   position: relative;
   padding-bottom: 3rem;
 }
 
-.SliderSection .accordionAbsolute {
-  position: absolute;
-  top: 9%;
-  z-index: 2;
+.Relative {
+  position: relative;
+}
+
+.AccordionSection .nav-link {
+  border: 1px solid #0014FF !important;
+  padding: 14px 53px;
+  border-radius: 25px !important;
+  font-size: 14px;
+  color: #0014FF;
+  text-align: center;
+  letter-spacing: 0px;
+  box-shadow: 0px 10px 18px #F44C4C0D;
 
 }
 
+.AccordionSection .nav-item {
+  margin-right: 20px;
+}
+
+.AccordionSection .nav-link.active {
+  background: #0014FF !important;
+  color: #FFFFFF !important;
+}
+
+.swiperaccordion .AccordionSection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.mySwiper .progressBar, .mySwiper1 .progressBar {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(222, 221, 221);
+  border-radius: 1px 0px 0px 1px;
+
+}
+
+.opacity {
+  opacity: 0;
+  animation: change 0.2s linear forwards;
+}
+
+@keyframes change {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
+
+.mySwiper .swiper-pagination-bullet-active .progressBarValue,
+.mySwiper1 .swiper-pagination-bullet-active .progressBarValue {
+  width: 0%;
+  animation: load 4.1s linear forwards;
+  height: 2px;
+  background-color: #0014FF !important;
+  z-index: 3;
+  border-radius: 1px 0px 0px 1px;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+
 .swiperaccordion .morefeatures {
   position: absolute;
-  bottom: 7%;
+  bottom: 18%;
   text-align: left;
   font-size: 18px;
   letter-spacing: 0px;
@@ -376,48 +451,50 @@ body {
   color: #fff !important;
 }
 
-.mySwiper .swiper-pagination .swiper-pagination-bullet {
-  display: flex;
-  flex-direction: row;
-  padding: 21px 0px;
+
+
+.mySwiper .swiper-pagination .swiper-pagination-bullet, .mySwiper1 .swiper-pagination .swiper-pagination-bullet {
+
+
   height: auto;
   border-radius: inherit;
-  width: 583px;
+  width: 100%;
   background: transparent;
   margin: 0px !important;
-  border-top: 1px solid #ccc;
   opacity: 1;
 }
 
-.mySwiper.one .swiper-pagination .swiper-pagination-bullet {
-  display: flex;
-  flex-direction: row;
-  padding: 21px 0px;
-  height: auto;
-  border-radius: inherit;
-  width: 583px;
-  background: transparent;
-  margin: 0px !important;
-  border-top: 1px solid #ccc;
-  opacity: 1;
+.page .AccSlide {
+  width: 100%;
 }
+
+
+/* animation-direction: alternate;
+animation-duration: 8s;
+animation-fill-mode: forwards;
+animation-iteration-count: 1;
+animation-name: countingBar;
+animation-timing-function: ease-in;
+background-color: #f66b00;
+z-index: 1; */
+
 
 .AccSlide .slideAcc {
   display: flex;
   justify-content: space-between;
-  width: 583px;
+  width: 100%;
+  padding: 21px 0px;
 }
 
-/* .page .swiper-pagination-bullet-active .SlideArrow {
-  background-image: url('./img/Vector\ \(1\).svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  transform: rotate(180deg) !important;
+.AccSlide .accorsub.none {
+  display: none;
+}
 
-} */
+.page.swiper-pagination-bullet-active .AccSlide .accorsub.none {
+  display: block !important;
+}
 
-.page.swiper-pagination-bullet .SlideArrow .arrowimg {
+.SlideArrow .arrowimg {
   width: 14px !important;
   margin-right: 27px;
 
@@ -425,7 +502,6 @@ body {
 
 .page.swiper-pagination-bullet-active .SlideArrow .arrowimg {
   transform: rotate(180deg);
-
 }
 
 
@@ -445,25 +521,24 @@ body {
   letter-spacing: 0px;
   color: #1E1B1B;
   opacity: 1;
-  padding: 10px 50px 16px 0px;
+  padding: 0px 50px 40px 0px;
   margin-bottom: 0;
 }
 
-.mySwiper .sliderContent {
+.mySwiper .sliderContent, .mySwiper1 .sliderContent {
   display: flex;
   flex-direction: column;
   width: 30%;
   margin-left: auto;
 }
 
-.mySwiper .none {
-  display: none !important;
-}
+/* .page .loader {
+  background-color: red;
+  width: 584px !important;
+  height: 3px;
+  display: block;
 
-.mySwiper .swiper-pagination-bullet-active .none {
-
-  display: block !important;
-}
+} */
 
 @media (max-width: 1365px) and (min-width: 1200px) {
   .container {
@@ -476,16 +551,25 @@ body {
     padding: 40px 20px 0 !important;
   }
 
-  .mySwiper .sliderContent {
+  .mySwiper .sliderContent, .mySwiper1 .sliderContent {
     display: none;
   }
 
-  .SliderSection .accordionAbsolute {
+  .swiperaccordion .AccordionSection {
     position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
     padding-bottom: 2rem;
   }
 
-  .mySwiper .swiper-pagination {
+
+  .SliderSection .accordionAbsolute {
+    position: relative;
+
+  }
+
+  .mySwiper .swiper-pagination, .mySwiper1 .swiper-pagination {
     position: relative;
     top: 0;
     left: 0;
@@ -497,9 +581,14 @@ body {
   }
 
 
-  .mySwiper.one .swiper-pagination .swiper-pagination-bullet {
+  .mySwiper.one .swiper-pagination .swiper-pagination-bullet, .mySwiper1.one .swiper-pagination .swiper-pagination-bullet {
     width: 100% !important;
     display: block;
+  }
+
+  .swiperaccordion .morefeatures {
+    bottom: 3%;
+
   }
 }
 

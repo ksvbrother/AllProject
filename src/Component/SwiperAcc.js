@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/autoplay";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
+
 import { Autoplay, Pagination, EffectFade } from "swiper";
-import { Container, Button } from "react-bootstrap";
+import { Container, Col, Row, Nav, Tab, Button } from "react-bootstrap";
 import SlideImgone from "../img/slide.png";
 import SlideImgtwo from "../img/slideimage.webp";
 import SlideImgthree from "../img/slideimagethree.webp";
@@ -21,251 +23,220 @@ const SwiperAcc = () => {
     SetRider(true);
     SetDriver(false);
   };
-  // const Content = [
-  //   {
-  //     head: "RTL Support ",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit ante dictum orci fringilla, eget suscipit libero suscipit. Maecenas molestie purus ligula, vitae malesuada neque aliquet nec. Aenean sed fermentum quam. Vivamus rhoncus diam non ante euismod, at cursus mi vestibulum.",
-  //   },
-
-  //   {
-  //     head: "In-app chats ",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit ante dictum orci fringilla, eget suscipit libero suscipit. Maecenas molestie purus ligula, vitae malesuada neque aliquet nec. Aenean sed fermentum quam. Vivamus rhoncus diam non ante euismod, at cursus mi vestibulum.",
-  //   },
-  //   {
-  //     head: "Multiple stop",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit ante dictum orci fringilla, eget suscipit libero suscipit. Maecenas molestie purus ligula, vitae malesuada neque aliquet nec. Aenean sed fermentum quam. Vivamus rhoncus diam non ante euismod, at cursus mi vestibulum.",
-  //   },
-  //   {
-  //     head: "Schedule a ride",
-  //     content:
-  //       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit ante dictum orci fringilla, eget suscipit libero suscipit. Maecenas molestie purus ligula, vitae malesuada neque aliquet nec. Aenean sed fermentum quam. Vivamus rhoncus diam non ante euismod, at cursus mi vestibulum.",
-  //   },
-  // ];
-
-  // const get = () => {
-  //   return (
-  //     <div>
-  //       {Content.map((item) => {
-  //         return (
-  //           <div>
-  //             <p>{item.head}</p>
-  //           </div>
-  //         );
-  //       })}
-  //     </div>
-  //   );
-  // };
-
-  var head = [
+  const riderhead = [
     "RTL Support",
     "In-app chats",
     "Multiple stop",
     "Schedule a ride",
   ];
-
-  var text = [
+  const driverhead = [
+    "Schedule a ride",
+    "Multiple stop",
+    "In-app chats",
+    "RTL Support",
+  ];
+  const ridertext = [
+    "That is when you turn to Lorem Ipsum. In your mind, something says “This, again? Maybe it’s time for a change, time for something new”. Oh boy, we couldn’t agree more.",
+    "This post is for those who still need a filler text but crave something more entertaining, more relevant, or just plain more. Read on for some cool alternatives to Lorem Ipsum for the next time you’re deep in your wireframe tool",
+    "Arrested Development has grown to have a huge cult following. The show surrounds the Bluth family as they navigate the rough waters of bankruptcy and financial ruin. And so, perhaps it should come as no surprise that someone out there took the time to",
+    "Even if the product isn’t necessarily about cats or pets in general, it can still be a great alternative to Lorem Ipsum. It certainly would make the prototype feel younger and more casual than good old Latin.",
+  ];
+  const drivertext = [
     "That is when you turn to Lorem Ipsum. In your mind, something says “This, again? Maybe it’s time for a change, time for something new”. Oh boy, we couldn’t agree more.",
     "This post is for those who still need a filler text but crave something more entertaining, more relevant, or just plain more. Read on for some cool alternatives to Lorem Ipsum for the next time you’re deep in your wireframe tool",
     "Arrested Development has grown to have a huge cult following. The show surrounds the Bluth family as they navigate the rough waters of bankruptcy and financial ruin. And so, perhaps it should come as no surprise that someone out there took the time to",
     "Even if the product isn’t necessarily about cats or pets in general, it can still be a great alternative to Lorem Ipsum. It certainly would make the prototype feel younger and more casual than good old Latin.",
   ];
 
-  console.table(head);
+  const SwiperOne = () => {
+    const RiderSlide = [
+      {
+        img: SlideImgone,
+      },
+      {
+        img: SlideImgtwo,
+      },
+      {
+        img: SlideImgthree,
+      },
+      {
+        img: SlideImgtwo,
+      },
+    ];
 
-  const paginationtwo = {
-    clickable: true,
-    renderBullet: function two(index, className) {
-      return (
-        '<span class="' +
-        className +
-        '">' +
-        "<div class='AccSlide'>" +
-        "<div class='slideAcc'>" +
-        "<div class='acchead'>" +
-        text[index] +
-        "</div>" +
-        "<div class='SlideArrow'>" +
-        "</div>" +
-        "</div>" +
-        "<div>" +
-        "<p class='accorsub none' >" +
-        text[index] +
-        "</p>" +
-        "</div>" +
-        "</div>" +
-        "</div> " +
-        "</span>"
-      );
-    },
+    var mySwiperone = {
+      pagination: {
+        clickable: true,
+        renderBullet: function one(index, className) {
+          return (
+            '<div class=" page ' +
+            className +
+            '">' +
+            "<div class='progressBar'>" +
+            "<div class='progressBarValue'>" +
+            "" +
+            "</div>" +
+            "</div>" +
+            "<div class='AccSlide'>" +
+            "<div class='slideAcc'>" +
+            "<div class='acchead'>" +
+            riderhead[index] +
+            "</div>" +
+            "<div class='SlideArrow'>" +
+            "<img src='" +
+            Arrow +
+            "'  alt = 'rider' class='arrowimg'>" +
+            "</img>" +
+            "</div>" +
+            "</div>" +
+            "<p class='accorsub none' >" +
+            ridertext[index] +
+            "</p>" +
+            "</div>" +
+            "</div>"
+          );
+        },
+      },
+
+      autoplay: {
+        delay: 4000,
+      },
+      modules: [Autoplay, Pagination, EffectFade],
+      className: "mySwiper  opacity",
+      loop: true,
+      effect: "fade",
+      // autoplayDisableOnInteraction: false,
+    };
+
+    return (
+      <Swiper {...mySwiperone} id="swiperone">
+        {RiderSlide.map((getimg, index) => {
+          return (
+            <SwiperSlide>
+              <div className="sliderContent" key={index}>
+                <img src={getimg.img} alt="rider"></img>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    );
   };
 
-  const paginationone = {
-    clickable: true,
-    renderBullet: function one(index, className) {
-      return (
-        '<span class=" page ' +
-        className +
-        '">' +
-        "<div class='AccSlide'>" +
-        "<div class='slideAcc'>" +
-        "<div class='acchead'>" +
-        head[index] +
-        "</div>" +
-        "<div class='SlideArrow'>" +
-        "<img src='" +
-        Arrow +
-        "' class='arrowimg'>" +
-        "</div>" +
-        "</div>" +
-        "<div>" +
-        "<p class='accorsub none' >" +
-        text[index] +
-        "</p>" +
-        "</div>" +
-        "</div>" +
-        "</div> " +
-        "</span>"
-      );
-    },
+  const SwiperTwo = () => {
+    const DriverSlide = [
+      {
+        img: SlideImgthree,
+      },
+      {
+        img: SlideImgtwo,
+      },
+      {
+        img: SlideImgone,
+      },
+      {
+        img: SlideImgtwo,
+      },
+    ];
+    var mySwipertwo = {
+      pagination: {
+        clickable: true,
+
+        renderBullet: function one(index, className) {
+          return (
+            '<div class=" page ' +
+            className +
+            '">' +
+            "<div class='progressBar'>" +
+            "<div class='progressBarValue'>" +
+            "" +
+            "</div>" +
+            "</div>" +
+            "<div class='AccSlide'>" +
+            "<div class='slideAcc'>" +
+            "<div class='acchead'>" +
+            driverhead[index] +
+            "</div>" +
+            "<div class='SlideArrow'>" +
+            "<img src='" +
+            Arrow +
+            "'  alt = 'rider' class='arrowimg'>" +
+            "</img>" +
+            "</div>" +
+            "</div>" +
+            "<p class='accorsub none' >" +
+            drivertext[index] +
+            "</p>" +
+            "</div>" +
+            "</div>"
+          );
+        },
+      },
+      autoplay: {
+        delay: 4000,
+      },
+      modules: [Autoplay, Pagination, EffectFade],
+      className: "mySwiper1 opacity",
+      loop: true,
+      effect: "fade",
+      // autoplayDisableOnInteraction: false,
+    };
+
+    return (
+      <Swiper {...mySwipertwo} id="swipertwo">
+        {DriverSlide.map((getimg, index) => {
+          return (
+            <SwiperSlide>
+              <div className="sliderContent" key={index}>
+                <img src={getimg.img} alt="driver"></img>
+              </div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    );
   };
-
-  // const paginationone = {
-  //   clickable: true,
-  //   renderBullet: function one(index, className) {
-  //     return (
-  //       "<span class='" +
-  //       className +
-  //       "' key=" +
-  //       index +
-  //       ">" +
-  //       "<div class='AccSlide'>" +
-  //       "<div class='slideAcc'>" +
-  //       "<div class='acchead'>RTL Support</div>" +
-  //       "<div class='SlideArrow'>" +
-  //       "&#8964;" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "<div>" +
-  //       "<p class='accorsub none' >Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit</p>" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "</div> " +
-  //       "</span>"
-  //     );
-  //   },
-  // };
-  // const paginationtwo = {
-  //   clickable: true,
-  //   renderBullet: function two(index, className) {
-  //     return (
-  //       "<span class='" +
-  //       className +
-  //       "' key=" +
-  //       index +
-  //       ">" +
-  //       "<div class='AccSlide'>" +
-  //       "<div class='slideAcc'>" +
-  //       "<div class='acchead'>Earily Support</div>" +
-  //       "<div class='SlideArrow'>" +
-  //       "&#8964;" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "<div>" +
-  //       "<p class='accorsub none' >Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit</p>" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "</div> " +
-  //       "</span>"
-  //     );
-  //   },
-  // };
-
-  const RiderSlide = [
-    {
-      img: SlideImgone,
-    },
-    {
-      img: SlideImgtwo,
-    },
-    {
-      img: SlideImgthree,
-    },
-    {
-      img: SlideImgtwo,
-    },
-  ];
-
-  const DriverSlide = [
-    {
-      img: SlideImgthree,
-    },
-    {
-      img: SlideImgthree,
-    },
-    {
-      img: SlideImgthree,
-    },
-    {
-      img: SlideImgthree,
-    },
-  ];
 
   return (
     <div className="swiperaccordion">
       <Container>
-        <div className="SliderSection">
-          <div className="accordionAbsolute">
-            <div>
-              <h2 className="Accsmall">Features & Functionalities</h2>
-              <h3 className="AccHead"> Rider & Driver</h3>
-              <div className="ButtonGroup">
-                <Button
-                  className={`${rider ? "off" : "on"} BtnRider`}
-                  onClick={Rider}
-                >
-                  Rider
-                </Button>
-                <Button
-                  className={`${driver ? " offdriver" : "ondriver"} BtnDriver`}
-                  onClick={Driver}
-                >
-                  Driver
-                </Button>
+        <Tab.Container defaultActiveKey="first">
+          <Row className="Relative">
+            <Col lg={12} xs={12} className="AccordionSection">
+              <div className="SliderSection">
+                <div className="accordionAbsolute">
+                  <div>
+                    <h2 className="Accsmall">Features & Functionalities</h2>
+                    <h3 className="AccHead"> Rider & Driver</h3>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-
-          <div>
-            <Swiper
-              effect={"fade"}
-              loop={true}
-              // autoplay={{
-              //   delay: 2500,
-              //   disableOnInteraction: false,
-              // }}
-              pagination={paginationone}
-              modules={[EffectFade, Pagination]}
-              className="mySwiper one"
-            >
-              {(rider ? DriverSlide : RiderSlide).map((getimg, index) => {
-                return (
-                  <SwiperSlide>
-                    <div className="sliderContent" key={index}>
-                      <img src={getimg.img}></img>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
-        </div>
+              <Nav variant="pills">
+                <Nav.Item>
+                  <Nav.Link eventKey="first">Rider</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="second">Driver</Nav.Link>
+                </Nav.Item>
+              </Nav>
+            </Col>
+            <Col lg={12} xs={12} className="SliderSwiper  Relative">
+              <Tab.Content>
+                <Tab.Pane eventKey="first">
+                  <SwiperOne></SwiperOne>
+                </Tab.Pane>
+                <Tab.Pane eventKey="second">
+                  <SwiperTwo></SwiperTwo>
+                </Tab.Pane>
+              </Tab.Content>
+            </Col>
+          </Row>
+        </Tab.Container>
 
         <a
           href="https://www.w3schools.com/"
           target="_blank"
+          rel="noopener"
           className="morefeatures"
         >
           More features
@@ -306,6 +277,31 @@ const SwiperAcc = () => {
             </g>
           </svg>
         </a>
+        <div className="SliderSection">
+          <div className="accordionAbsolute">
+            <div>
+              <h2 className="Accsmall">Features & Functionalities</h2>
+              <h3 className="AccHead"> Rider & Driver</h3>
+            </div>
+          </div>
+        </div>
+        <div className="ButtonGroup">
+          <Button
+            className={`${rider ? "off" : "on"} BtnRider`}
+            onClick={Rider}
+          >
+            Rider
+          </Button>
+          <Button
+            className={`${driver ? " offdriver" : "ondriver"} BtnDriver`}
+            onClick={Driver}
+          >
+            Driver
+          </Button>
+        </div>
+        <div>
+          {rider ? <div>{SwiperTwo()}</div> : <div> {SwiperOne()}</div>}
+        </div>
       </Container>
     </div>
   );
