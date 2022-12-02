@@ -267,30 +267,82 @@ body {
 
 .swiperaccordion {
   background: transparent linear-gradient(269deg, #F7E8FF 0%, #EFF4FF 100%) 0% 0% no-repeat padding-box;
-  margin-bottom: 2rem;
+  padding-top: 1rem;
 }
 
 
 .mySwiper img, .mySwiper1 img {
-  width: 320px !important;
+  width: 284px !important;
   height: 100%;
 }
 
-.mySwiper .swiper-slide, .mySwiper1 .swiper-slide {
+/* .mySwiper .swiper-slide, .mySwiper1 .swiper-slide {
   display: flex;
   justify-content: flex-end;
-}
+} */
 
-.mySwiper .swiper-pagination, .mySwiper1 .swiper-pagination {
+/* .mySwiper .swiper-pagination, .mySwiper1 .swiper-pagination {
   left: 0 !important;
-  top: 30%;
+  top: 31%;
   text-align: left;
   display: flex;
   flex-direction: column;
   width: 50% !important;
 
 
+} */
+
+.swiperaccordion .opacity {
+
+  animation: blur .5s ease-in-out forwards;
+  opacity: 1;
 }
+
+@keyframes blur {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+/* 
+.SliderSwiper .tab-content .tab-pane.active {
+  filter: blur(0px);
+  animation: blur .3s ease-in-out forwards;
+
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(2px);
+  }
+
+
+  50% {
+    filter: blur(1px);
+  }
+
+  100% {
+    animation-delay: 1s;
+    filter: blur(0px);
+  }
+
+} */
+
+.Swiper1, .Swiper2 {
+  width: 300px;
+  height: 400px;
+
+}
+
 
 .SliderSwiper .swiperaccordion {
   position: relative;
@@ -322,12 +374,15 @@ body {
   color: #FFFFFF !important;
 }
 
-.swiperaccordion .AccordionSection {
+/* swiper acccordion with slider */
+
+.swiperaccordion .accordionAbsolute {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
 }
+
 
 .mySwiper .progressBar, .mySwiper1 .progressBar {
   width: 100%;
@@ -337,28 +392,13 @@ body {
 
 }
 
-.opacity {
-  opacity: 0;
-  animation: change 0.2s linear forwards;
-}
-
-@keyframes change {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-
-}
 
 
 
 .mySwiper .swiper-pagination-bullet-active .progressBarValue,
 .mySwiper1 .swiper-pagination-bullet-active .progressBarValue {
   width: 0%;
-  animation: load 4.1s linear forwards;
+  animation: load 8s ease-in forwards;
   height: 2px;
   background-color: #0014FF !important;
   z-index: 3;
@@ -376,9 +416,11 @@ body {
 }
 
 
-.swiperaccordion .morefeatures {
-  position: absolute;
-  bottom: 18%;
+.renderSlider .morefeatures {
+  position: relative;
+}
+
+.renderSlider .morefeatures a {
   text-align: left;
   font-size: 18px;
   letter-spacing: 0px;
@@ -411,19 +453,19 @@ body {
 .accordionAbsolute .ButtonGroup {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .ButtonGroup .BtnRider {
-  padding: 12px 48px;
+  padding: 14px 53px;
   border-radius: 25px;
   color: #fff;
-  margin-right: 20px;
   font-size: 14px;
   opacity: 1;
 }
 
 .ButtonGroup .BtnDriver {
-  padding: 12px 48px;
+  padding: 14px 53px;
   border-radius: 25px;
   color: blue;
   font-size: 14px;
@@ -454,8 +496,6 @@ body {
 
 
 .mySwiper .swiper-pagination .swiper-pagination-bullet, .mySwiper1 .swiper-pagination .swiper-pagination-bullet {
-
-
   height: auto;
   border-radius: inherit;
   width: 100%;
@@ -492,6 +532,7 @@ z-index: 1; */
 
 .page.swiper-pagination-bullet-active .AccSlide .accorsub.none {
   display: block !important;
+
 }
 
 .SlideArrow .arrowimg {
@@ -511,7 +552,7 @@ z-index: 1; */
   letter-spacing: 0px;
   color: #1E1B1B;
   opacity: 1;
-  font-weight: 600;
+  font-weight: 500;
 
 }
 
@@ -528,17 +569,209 @@ z-index: 1; */
 .mySwiper .sliderContent, .mySwiper1 .sliderContent {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
   margin-left: auto;
 }
 
-/* .page .loader {
-  background-color: red;
-  width: 584px !important;
-  height: 3px;
+.swiperaccordion .swiper {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  overflow: visible;
+  /* align-items: flex-start;
+  overflow: visible !important; */
+
+}
+
+
+
+.swiperaccordion .mySwiper .swiper-pagination, .swiperaccordion .mySwiper1 .swiper-pagination {
+  width: 100%;
+  position: relative;
+  left: -100% !important;
+  margin-top: 13rem;
+
+}
+
+.swiperaccordion .page {
+  width: 500px !important;
+
+}
+
+
+/* Dotted animation section */
+.DottedAnis {
+  margin-bottom: 20rem;
+  background: #f7f7f7 0 0 no-repeat padding-box;
+  padding: 3rem 0rem;
+}
+
+.DottedAnis .FirstDotted {
+
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+.DottedCircle {
+  position: absolute;
+  left: 25px;
+  width: 100%;
+  top: 12px;
+}
+
+
+.Tooltip .RecentUpdate {
+  z-index: 1;
+  position: relative;
+}
+
+.circleAnim {
+  stroke-dashoffset: 100;
+  animation: rotatecircle 2s linear infinite;
+}
+
+@keyframes rotatecircle {
+  0% {
+    stroke-dashoffset: 0;
+
+  }
+
+  100% {
+    stroke-dashoffset: 100;
+
+  }
+
+}
+
+
+.DottedAnis .dottedRow {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.DottedAnis .FirstDotted .UpdateMove {
+  left: 43%;
+  top: -37px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.dashedImg .dashedTitle, .UpdateMove .dashedTitle {
+  color: #1e1b1b;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 25px;
+  opacity: 1;
+  text-align: center;
+  margin: 20px 0 0 0;
+
+}
+
+
+
+
+.DottedAnis .SecondDotted {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.dashedImg .Tooltip .circleImg.Active {
+  transform: scale(1.2);
+}
+
+.dashedImg .Tooltip {
+  position: relative;
+}
+
+.Tooltip .MobileAlign {
+  position: relative;
+  z-index: 1;
+}
+
+
+.Tooltip .TooltipBox {
+  padding: 12px 10px;
+  position: absolute;
+  display: none;
+  top: 120px;
+  left: -28px;
+  width: 280px;
+  background: #fff 0 0 no-repeat padding-box;
+  border-radius: 4px;
+  box-shadow: 0 7px 23px #00000029;
+  z-index: 1;
+}
+
+
+.dashedImg .TooltipBox.LastChild {
+  left: -183px !important;
+}
+
+.dashedImg .Tooltip:hover .TooltipBox {
   display: block;
+  z-index: 3;
+}
+
+.UpdateMove .Tooltip:hover .TooltipBox {
+  display: block;
+  z-index: 3;
+}
+
+.TooltipBox .Tooltipcontent {
+  text-align: left;
+}
+
+.TooltipBox .Tooltipheading {
+  color: #1e1b1b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.TooltipBox .Tooltipsubheading {
+  color: #5d6065;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* .SecondDotted div>p {
+  text-align: center;
+  margin: 30px 0 0 0;
 
 } */
+
+
+.dottedRow .SecondDotted:after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg, #afafaf, 68%, transparent 0%);
+  background-repeat: repeat-x;
+  background-size: 10px 1px;
+  background-position: center;
+  animation: border 7s infinite linear;
+}
+
+@keyframes border {
+  0% {
+    background-position: 0px 0px;
+  }
+
+  100% {
+    background-position: 300px 0px;
+  }
+}
+
+
 
 @media (max-width: 1365px) and (min-width: 1200px) {
   .container {
@@ -546,14 +779,29 @@ z-index: 1; */
   }
 }
 
-@media screen and (max-width:1200px) {
-  .container {
-    padding: 40px 20px 0 !important;
+@media screen and (min-width:1200px) {
+  .swiperaccordion .page {
+    width: 660px !important;
+
   }
 
-  .mySwiper .sliderContent, .mySwiper1 .sliderContent {
-    display: none;
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+
+  .dashedImg .TooltipBox.FirstChild {
+    left: -5px !important;
   }
+}
+
+@media screen and (max-width:1200px) {
+  .container {
+    padding: 40px 20px !important;
+  }
+
+  /* .mySwiper .sliderContent, .mySwiper1 .sliderContent {
+    display: none;
+  } */
 
   .swiperaccordion .AccordionSection {
     position: relative;
@@ -564,10 +812,6 @@ z-index: 1; */
   }
 
 
-  .SliderSection .accordionAbsolute {
-    position: relative;
-
-  }
 
   .mySwiper .swiper-pagination, .mySwiper1 .swiper-pagination {
     position: relative;
@@ -586,9 +830,12 @@ z-index: 1; */
     display: block;
   }
 
-  .swiperaccordion .morefeatures {
-    bottom: 3%;
+}
 
+@media (min-width:992px) and (max-width:1200px) {
+  .DottedAnis .FirstDotted .UpdateMove {
+    left: 43%;
+    top: -36px;
   }
 }
 
@@ -607,6 +854,30 @@ z-index: 1; */
     font-size: 15px;
 
   }
+
+  .swiperaccordion .page {
+    width: 390px !important;
+  }
+
+  .DottedAnis .FirstDotted .UpdateMove {
+    left: 43%;
+    top: 8px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .DottedCircle {
+    position: absolute;
+    left: 26px;
+    width: 100%;
+    top: 28px;
+  }
+
+
+
+
+
 
 
 }
@@ -638,6 +909,52 @@ z-index: 1; */
     z-index: 99;
     width: 900px;
   }
+
+  .swiperaccordion .mySwiper .swiper-pagination, .swiperaccordion .mySwiper1 .swiper-pagination {
+    margin-top: 0rem;
+
+  }
+
+  .swiperaccordion .mySwiper .swiper-wrapper {
+    top: 0;
+  }
+
+  .SliderSection .accordionAbsolute {
+    position: relative;
+    padding-bottom: 2.5rem;
+
+  }
+
+  .mySwiper img, .mySwiper1 img {
+    width: 287px !important;
+    height: 100%;
+  }
+
+  .swiperaccordion .mySwiper .swiper-pagination, .swiperaccordion .mySwiper1 .swiper-pagination {
+    left: 0 !important;
+    top: 0px !important;
+  }
+
+  .swiperaccordion .swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .swiperaccordion .page {
+    width: 100% !important;
+  }
+
+  .mySwiper .sliderContent, .mySwiper1 .sliderContent {
+    align-items: center !important;
+  }
+
+  .SliderSection .accordionAbsolute .AccHead {
+    font-size: 33px;
+  }
+
+
 
   .TableSection .tableSection {
     width: 900px;
@@ -674,4 +991,120 @@ z-index: 1; */
     color: #0000006e;
     font-weight: 500;
   }
+
+  .DottedAnis .SecondDotted {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    gap: 60px;
+
+  }
+
+  .DottedAnis .dottedRow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .DottedAnis .FirstDotted .UpdateMove {
+
+    left: 0;
+  }
+
+  /* .SecondDotted {
+    height: auto;
+    width: 10px;
+    background: linear-gradient(0deg, green 50%, transparent 50%);
+    background-repeat: repeat-y;
+    background-size: 3px 10px;
+    background-position: 0px 0px;
+    padding: 10px;
+    animation: border 5s infinite linear;
+  }
+
+  @keyframes border {
+    0% {
+      background-position: 0px 0px;
+    }
+
+    100% {
+      background-position: 0px 300px;
+    }
+  } */
+
+
+
+  .dottedRow .SecondDotted:after {
+    height: auto;
+    background-image: linear-gradient(0deg, #afafaf, 68%, transparent 0%);
+    background-repeat: repeat-y;
+    background-size: 1px 10px;
+    bottom: 0;
+    left: 46px;
+    top: 0;
+    right: 0;
+
+
+  }
+
+  @keyframes border {
+    0% {
+      background-position: 0px 0px;
+    }
+
+    100% {
+      background-position: 0px 300px;
+    }
+  }
+
+
+  .Tooltip .MobileAlign {
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+  }
+
+  .dashedImg .dashedTitle {
+    margin: 0;
+  }
+
+  .Tooltip .TooltipBox {
+    top: 86px;
+    left: -56px;
+  }
+
+  .dashedImg .TooltipBox.LastChild {
+    left: -58px !important;
+  }
+
+  .UpdateMove .TooltipBox.FirstRecent {
+
+    left: -86px;
+  }
+
+  .DottedAnis .FirstDotted {
+    margin-bottom: 0;
+  }
+
+  .DottedCircle {
+    display: none;
+  }
+}
+
+
+
+
+@media screen and (min-width:768px) {}
+
+@media screen and (max-width:383px) {
+  .accordionAbsolute .ButtonGroup {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+
 }

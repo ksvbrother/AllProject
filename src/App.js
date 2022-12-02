@@ -5,6 +5,9 @@ import NavBar from "./Component/NavBar";
 import SwiperAcc from "./Component/SwiperAcc";
 import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
 import Checking from "./Component/Checking";
+import TabsExample from "./Component/Autoplay";
+import AccorditionwithSlider from "./Component/AccorditionwithSlider";
+import Dottedline from "./Component/Dottedline";
 
 class App extends Component {
   // constructor(props) {
@@ -47,10 +50,16 @@ class App extends Component {
       <div>
         <NavBar></NavBar>
         <AccTable></AccTable>
-        <SwiperAcc
-        // RiderHead={this.state.riderhead}
-        // RiderText={this.state.ridertext}
-        />
+        {/* <SwiperAcc
+          tab1="Rider"
+          tab2="Driver"
+          // RiderHead={this.state.riderhead}
+          // RiderText={this.state.ridertext}
+        /> */}
+
+        <AccorditionwithSlider tab1="Rider" tab2="Driver" />
+        <Dottedline />
+        {/* <TabsExample /> */}
         {/* <Checking /> */}
 
         {/* <div>{this.state.riderhead}</div>
