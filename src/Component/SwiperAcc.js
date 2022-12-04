@@ -75,44 +75,16 @@ const SwiperAcc = () => {
 
   console.table(head);
 
-  const paginationtwo = {
-    clickable: true,
-    renderBullet: function two(index, className) {
-      return (
-        '<span class="' +
-        className +
-        '">' +
-        "<div class='AccSlide'>" +
-        "<div class='slideAcc'>" +
-        "<div class='acchead'>" +
-        text[index] +
-        "</div>" +
-        "<div class='SlideArrow'>" +
-        "</div>" +
-        "</div>" +
-        "<div>" +
-        "<p class='accorsub none' >" +
-        text[index] +
-        "</p>" +
-        "</div>" +
-        "</div>" +
-        "</div> " +
-        "</span>"
-      );
-    },
-  };
-
   const paginationone = {
     clickable: true,
     renderBullet: function one(index, className) {
-      return (
-        '<span class=" page ' +
+      return ('<span class=" page ' +
         className +
         '">' +
         "<div class='AccSlide'>" +
         "<div class='slideAcc'>" +
-        "<div class='acchead'>" +
-        head[index] +
+        "<div class='acchead '>" + (head[index])
+        +
         "</div>" +
         "<div class='SlideArrow'>" +
         "<img src='" +
@@ -121,67 +93,19 @@ const SwiperAcc = () => {
         "</div>" +
         "</div>" +
         "<div>" +
+
         "<p class='accorsub none' >" +
-        text[index] +
+        (text[index]) +
         "</p>" +
         "</div>" +
         "</div>" +
         "</div> " +
-        "</span>"
-      );
-    },
-  };
 
-  // const paginationone = {
-  //   clickable: true,
-  //   renderBullet: function one(index, className) {
-  //     return (
-  //       "<span class='" +
-  //       className +
-  //       "' key=" +
-  //       index +
-  //       ">" +
-  //       "<div class='AccSlide'>" +
-  //       "<div class='slideAcc'>" +
-  //       "<div class='acchead'>RTL Support</div>" +
-  //       "<div class='SlideArrow'>" +
-  //       "&#8964;" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "<div>" +
-  //       "<p class='accorsub none' >Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit</p>" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "</div> " +
-  //       "</span>"
-  //     );
-  //   },
-  // };
-  // const paginationtwo = {
-  //   clickable: true,
-  //   renderBullet: function two(index, className) {
-  //     return (
-  //       "<span class='" +
-  //       className +
-  //       "' key=" +
-  //       index +
-  //       ">" +
-  //       "<div class='AccSlide'>" +
-  //       "<div class='slideAcc'>" +
-  //       "<div class='acchead'>Earily Support</div>" +
-  //       "<div class='SlideArrow'>" +
-  //       "&#8964;" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "<div>" +
-  //       "<p class='accorsub none' >Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit. Ut suscipit</p>" +
-  //       "</div>" +
-  //       "</div>" +
-  //       "</div> " +
-  //       "</span>"
-  //     );
-  //   },
-  // };
+        "</span>"
+      )
+    }
+  }
+
 
   const RiderSlide = [
     {
@@ -242,12 +166,12 @@ const SwiperAcc = () => {
             <Swiper
               effect={"fade"}
               loop={true}
-              // autoplay={{
-              //   delay: 2500,
-              //   disableOnInteraction: false,
-              // }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               pagination={paginationone}
-              modules={[EffectFade, Pagination]}
+              modules={[Autoplay, EffectFade, Pagination]}
               className="mySwiper one"
             >
               {(rider ? DriverSlide : RiderSlide).map((getimg, index) => {
@@ -308,7 +232,8 @@ const SwiperAcc = () => {
         </a>
       </Container>
     </div>
-  );
-};
+  )
+}
+
 
 export default SwiperAcc;
