@@ -75,7 +75,7 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1170px !important;
-  padding: 70px 20px 0;
+  padding: 70px 20px;
   width: 100% !important;
   z-index: 99;
 }
@@ -267,43 +267,160 @@ body {
 
 .swiperaccordion {
   background: transparent linear-gradient(269deg, #F7E8FF 0%, #EFF4FF 100%) 0% 0% no-repeat padding-box;
-  margin-bottom: 30rem;
+  padding-top: 1rem;
 }
 
 
-.mySwiper img {
-  width: 320px !important;
+.mySwiper img, .mySwiper1 img {
+  width: 284px !important;
   height: 100%;
 }
 
-.mySwiper .swiper-slide {
+/* .mySwiper .swiper-slide, .mySwiper1 .swiper-slide {
   display: flex;
   justify-content: flex-end;
-}
+} */
 
-.mySwiper .swiper-pagination {
-  bottom: 10px;
+/* .mySwiper .swiper-pagination, .mySwiper1 .swiper-pagination {
   left: 0 !important;
-  width: 0% !important;
-  top: 30%;
+  top: 31%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 50% !important;
+
+
+} */
+
+.swiperaccordion .opacity {
+
+  animation: blur .5s ease-in-out forwards;
+  opacity: 1;
+}
+
+@keyframes blur {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+/* 
+.SliderSwiper .tab-content .tab-pane.active {
+  filter: blur(0px);
+  animation: blur .3s ease-in-out forwards;
+
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(2px);
+  }
+
+
+  50% {
+    filter: blur(1px);
+  }
+
+  100% {
+    animation-delay: 1s;
+    filter: blur(0px);
+  }
+
+} */
+
+.Swiper1, .Swiper2 {
+  width: 300px;
+  height: 400px;
+
 }
 
 
-.swiperaccordion {
+.SliderSwiper .swiperaccordion {
   position: relative;
   padding-bottom: 3rem;
 }
 
-.SliderSection .accordionAbsolute {
-  position: absolute;
-  top: 9%;
-  z-index: 2;
+.Relative {
+  position: relative;
+}
+
+.AccordionSection .nav-link {
+  border: 1px solid #0014FF !important;
+  padding: 14px 53px;
+  border-radius: 25px !important;
+  font-size: 14px;
+  color: #0014FF;
+  text-align: center;
+  letter-spacing: 0px;
+  box-shadow: 0px 10px 18px #F44C4C0D;
 
 }
 
-.swiperaccordion .morefeatures {
+.AccordionSection .nav-item {
+  margin-right: 20px;
+}
+
+.AccordionSection .nav-link.active {
+  background: #0014FF !important;
+  color: #FFFFFF !important;
+}
+
+/* swiper acccordion with slider */
+
+.swiperaccordion .accordionAbsolute {
   position: absolute;
-  bottom: 7%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+
+.mySwiper .progressBar, .mySwiper1 .progressBar {
+  width: 100%;
+  height: 2px;
+  background-color: rgb(222, 221, 221);
+  border-radius: 1px 0px 0px 1px;
+
+}
+
+
+
+
+.mySwiper .swiper-pagination-bullet-active .progressBarValue,
+.mySwiper1 .swiper-pagination-bullet-active .progressBarValue {
+  width: 0%;
+  animation: load 8s ease-in forwards;
+  height: 2px;
+  background-color: #0014FF !important;
+  z-index: 3;
+  border-radius: 1px 0px 0px 1px;
+}
+
+@keyframes load {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+
+.renderSlider .morefeatures {
+  position: relative;
+}
+
+.renderSlider .morefeatures a {
   text-align: left;
   font-size: 18px;
   letter-spacing: 0px;
@@ -336,19 +453,19 @@ body {
 .accordionAbsolute .ButtonGroup {
   display: flex;
   align-items: center;
+  gap: 20px;
 }
 
 .ButtonGroup .BtnRider {
-  padding: 12px 48px;
+  padding: 14px 53px;
   border-radius: 25px;
   color: #fff;
-  margin-right: 20px;
   font-size: 14px;
   opacity: 1;
 }
 
 .ButtonGroup .BtnDriver {
-  padding: 12px 48px;
+  padding: 14px 53px;
   border-radius: 25px;
   color: blue;
   font-size: 14px;
@@ -376,50 +493,38 @@ body {
   color: #fff !important;
 }
 
-.mySwiper .swiper-pagination .swiper-pagination-bullet {
-  display: flex;
-  flex-direction: row;
-  padding: 21px 0px;
+
+
+.mySwiper .swiper-pagination .swiper-pagination-bullet, .mySwiper1 .swiper-pagination .swiper-pagination-bullet {
   height: auto;
   border-radius: inherit;
-  width: 583px;
+  width: 100%;
   background: transparent;
   margin: 0px !important;
-  border-top: 1px solid #ccc;
   opacity: 1;
 }
 
-
-
-.mySwiper.one .swiper-pagination .swiper-pagination-bullet {
-  display: flex;
-  flex-direction: row;
-  padding: 21px 0px;
-  height: auto;
-  border-radius: inherit;
-  width: 583px;
-  background: transparent;
-  margin: 0px !important;
-  border-top: 1px solid #ccc;
-  opacity: 1;
+.page .AccSlide {
+  width: 100%;
 }
 
 .AccSlide .slideAcc {
   display: flex;
   justify-content: space-between;
-  width: 583px;
+  width: 100%;
+  padding: 21px 0px;
 }
 
-/* .page .swiper-pagination-bullet-active .SlideArrow {
-  background-image: url('./img/Vector\ \(1\).svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  transform: rotate(180deg) !important;
+.AccSlide .accorsub.none {
+  display: none;
+}
 
-} */
+.page.swiper-pagination-bullet-active .AccSlide .accorsub.none {
+  display: block !important;
 
-.page.swiper-pagination-bullet .SlideArrow .arrowimg {
+}
+
+.SlideArrow .arrowimg {
   width: 14px !important;
   margin-right: 27px;
 
@@ -427,7 +532,6 @@ body {
 
 .page.swiper-pagination-bullet-active .SlideArrow .arrowimg {
   transform: rotate(180deg);
-
 }
 
 
@@ -437,7 +541,7 @@ body {
   letter-spacing: 0px;
   color: #1E1B1B;
   opacity: 1;
-  font-weight: 600;
+  font-weight: 500;
 
 }
 
@@ -447,25 +551,206 @@ body {
   letter-spacing: 0px;
   color: #1E1B1B;
   opacity: 1;
-  padding: 10px 50px 16px 0px;
+  padding: 0px 50px 40px 0px;
   margin-bottom: 0;
 }
 
-.mySwiper .sliderContent {
+.mySwiper .sliderContent, .mySwiper1 .sliderContent {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
   margin-left: auto;
 }
 
-.mySwiper .none {
-  display: none !important;
+.swiperaccordion .swiper {
+  display: flex;
+  flex: 1;
+  align-items: stretch;
+  overflow: visible;
+  /* align-items: flex-start;
+  overflow: visible !important; */
+
 }
 
-.mySwiper .swiper-pagination-bullet-active .none {
 
-  display: block !important;
+
+.swiperaccordion .mySwiper .swiper-pagination, .swiperaccordion .mySwiper1 .swiper-pagination {
+  width: 100%;
+  position: relative;
+  left: -100% !important;
+  margin-top: 13rem;
+
 }
+
+.swiperaccordion .page {
+  width: 500px !important;
+
+}
+
+
+/* Dotted animation section */
+
+.DottedAnis {
+  margin-bottom: 20rem;
+  background: #f7f7f7 0 0 no-repeat padding-box;
+  padding: 3rem 0rem;
+}
+
+
+.dottedRow .FirstDotted {
+  position: relative;
+}
+
+.FirstDotted .UpdateMove {
+  position: relative;
+  display: inline-block;
+  left: 22%;
+  width: 50%;
+  margin-bottom: 5rem;
+
+}
+
+
+.UpdateMove .RecentUpdate {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+
+.dottedRow .SecondDotted {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.Tooltip .ProcessSection {
+  z-index: 2;
+}
+
+.UpdateMove .DottedCircle {
+  max-width: 100%;
+}
+
+.dottedRow .SecondDotted:after {
+  position: absolute;
+  content: "";
+  height: 1px;
+  top: 50px;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg, #afafaf, 68%, transparent 0%);
+  background-repeat: repeat-x;
+  background-size: 10px 1px;
+  background-position: center;
+  animation: border 7s infinite linear;
+}
+
+@keyframes border {
+  0% {
+    background-position: 0px 0px;
+  }
+
+  100% {
+    background-position: 300px 0px;
+  }
+}
+
+
+
+.semi-circle {
+  width: 300px;
+  height: 150px;
+
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  /* background-color: palegreen; */
+  overflow: hidden;
+
+}
+
+:root {
+  --percentage: 0;
+  --fill: #00f;
+
+}
+
+.semi-circle>div {
+
+  width: 300px;
+  /* background-color: red; */
+  height: 300px;
+  transform: rotate(0deg);
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: dashed;
+  border-color: #afafaf;
+  animation: role 10s linear infinite;
+
+
+}
+
+@keyframes role {
+  0% {
+    transform: rotate(0deg);
+
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+
+.SecondDotted .Tooltip {
+  text-align: center;
+}
+
+.Tooltip .dashedTitle {
+  margin: 20px 0 0 0;
+}
+
+
+
+.circleAnim {
+  stroke-dashoffset: 100;
+  animation: rotatecircle 2s linear infinite;
+}
+
+@keyframes rotatecircle {
+  0% {
+    stroke-dashoffset: 0;
+
+  }
+
+  100% {
+    stroke-dashoffset: 100;
+
+  }
+
+}
+
+
+.dashedImg .Tooltip .circleImg.Active {
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1365px) and (min-width: 1200px) {
   .container {
@@ -473,21 +758,36 @@ body {
   }
 }
 
+@media screen and (min-width:1200px) {
+  .swiperaccordion .page {
+    width: 660px !important;
+
+  }
+
+}
+
+@media (min-width:768px) and (max-width:1200px) {}
+
 @media screen and (max-width:1200px) {
   .container {
-    padding: 40px 20px 0 !important;
+    padding: 40px 20px !important;
   }
 
-  .mySwiper .sliderContent {
+  /* .mySwiper .sliderContent, .mySwiper1 .sliderContent {
     display: none;
-  }
+  } */
 
-  .SliderSection .accordionAbsolute {
+  .swiperaccordion .AccordionSection {
     position: relative;
+    top: 0;
+    left: 0;
+    z-index: 2;
     padding-bottom: 2rem;
   }
 
-  .mySwiper .swiper-pagination {
+
+
+  .mySwiper .swiper-pagination, .mySwiper1 .swiper-pagination {
     position: relative;
     top: 0;
     left: 0;
@@ -499,11 +799,14 @@ body {
   }
 
 
-  .mySwiper.one .swiper-pagination .swiper-pagination-bullet {
+  .mySwiper.one .swiper-pagination .swiper-pagination-bullet, .mySwiper1.one .swiper-pagination .swiper-pagination-bullet {
     width: 100% !important;
     display: block;
   }
+
 }
+
+@media (min-width:992px) and (max-width:1200px) {}
 
 @media (min-width:768px) and (max-width:991px) {
 
@@ -520,6 +823,17 @@ body {
     font-size: 15px;
 
   }
+
+  .swiperaccordion .page {
+    width: 390px !important;
+  }
+
+
+
+
+
+
+
 
 
 }
@@ -551,6 +865,52 @@ body {
     z-index: 99;
     width: 900px;
   }
+
+  .swiperaccordion .mySwiper .swiper-pagination, .swiperaccordion .mySwiper1 .swiper-pagination {
+    margin-top: 0rem;
+
+  }
+
+  .swiperaccordion .mySwiper .swiper-wrapper {
+    top: 0;
+  }
+
+  .SliderSection .accordionAbsolute {
+    position: relative;
+    padding-bottom: 2.5rem;
+
+  }
+
+  .mySwiper img, .mySwiper1 img {
+    width: 287px !important;
+    height: 100%;
+  }
+
+  .swiperaccordion .mySwiper .swiper-pagination, .swiperaccordion .mySwiper1 .swiper-pagination {
+    left: 0 !important;
+    top: 0px !important;
+  }
+
+  .swiperaccordion .swiper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .swiperaccordion .page {
+    width: 100% !important;
+  }
+
+  .mySwiper .sliderContent, .mySwiper1 .sliderContent {
+    align-items: center !important;
+  }
+
+  .SliderSection .accordionAbsolute .AccHead {
+    font-size: 33px;
+  }
+
+
 
   .TableSection .tableSection {
     width: 900px;
@@ -587,4 +947,70 @@ body {
     color: #0000006e;
     font-weight: 500;
   }
+
+
+
+
+
+  /* .SecondDotted {
+    height: auto;
+    width: 10px;
+    background: linear-gradient(0deg, green 50%, transparent 50%);
+    background-repeat: repeat-y;
+    background-size: 3px 10px;
+    background-position: 0px 0px;
+    padding: 10px;
+    animation: border 5s infinite linear;
+  }
+
+  @keyframes border {
+    0% {
+      background-position: 0px 0px;
+    }
+
+    100% {
+      background-position: 0px 300px;
+    }
+  } */
+
+
+
+  .dottedRow .SecondDotted:after {
+    height: auto;
+    background-image: linear-gradient(0deg, #afafaf, 68%, transparent 0%);
+    background-repeat: repeat-y;
+    background-size: 1px 10px;
+    bottom: 0;
+    left: 46px;
+    top: 0;
+    right: 0;
+  }
+
+  @keyframes border {
+    0% {
+      background-position: 0px 0px;
+    }
+
+    100% {
+      background-position: 0px 300px;
+    }
+  }
+
+
+
+}
+
+
+
+
+@media screen and (min-width:768px) {}
+
+@media screen and (max-width:383px) {
+  .accordionAbsolute .ButtonGroup {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+
 }
