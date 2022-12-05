@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
+
+:root {
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
 body {
-  font-family: 'Poppins', sans-serif;
+  font: 'Poppins', sans-serif var(--font-family-monospace) var(--font-family-sans-serif);
+
 
 }
+
+
+/* default section */
+img {
+  margin: 0 0 1.45rem 0;
+  max-width: 100%;
+}
+
+
 
 
 .heading {
@@ -509,15 +525,6 @@ body {
 }
 
 
-/* animation-direction: alternate;
-animation-duration: 8s;
-animation-fill-mode: forwards;
-animation-iteration-count: 1;
-animation-name: countingBar;
-animation-timing-function: ease-in;
-background-color: #f66b00;
-z-index: 1; */
-
 
 .AccSlide .slideAcc {
   display: flex;
@@ -602,16 +609,18 @@ z-index: 1; */
 
 
 /* Dotted animation section */
+
+
 .DottedAnis {
-  margin-bottom: 20rem;
-  background: #f7f7f7 0 0 no-repeat padding-box;
-  padding: 3rem 0rem;
+  margin-bottom: 50rem;
+  background: transparent linear-gradient(265deg, #f8faff, #ffecf6) 0 0 no-repeat padding-box;
+
+  padding: 1rem 0rem;
 }
 
 .DottedAnis .FirstDotted {
-
   position: relative;
-  margin-bottom: 5rem;
+  width: 54%;
 }
 
 .DottedCircle {
@@ -621,56 +630,61 @@ z-index: 1; */
   top: 12px;
 }
 
-
-.Tooltip .RecentUpdate {
-  z-index: 1;
-  position: relative;
-}
-
-.circleAnim {
-  stroke-dashoffset: 100;
-  animation: rotatecircle 2s linear infinite;
-}
-
-@keyframes rotatecircle {
-  0% {
-    stroke-dashoffset: 0;
-
-  }
-
-  100% {
-    stroke-dashoffset: 100;
-
-  }
+.DottedAnis .Dottedcontent {
+  text-align: center;
+  margin-bottom: 80px;
 
 }
+
+.Dottedcontent .DottedHeading {
+  color: #0014ff;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.Dottedcontent .DottedSubHeading {
+  color: #1e1b1b;
+  font-size: 50px;
+  line-height: 58px;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+
 
 
 .DottedAnis .dottedRow {
   display: flex;
   flex-direction: column;
 
+
 }
 
 .DottedAnis .FirstDotted .UpdateMove {
-  left: 43%;
-  top: -37px;
+  left: 9%;
   position: relative;
   display: inline-block;
   text-align: center;
+  top: 25px;
+  width: 100%;
 }
 
-.dashedImg .dashedTitle, .UpdateMove .dashedTitle {
-  color: #1e1b1b;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 25px;
-  opacity: 1;
-  text-align: center;
-  margin: 20px 0 0 0;
-
+.UpdateMove .DottedSemiCircleAnim {
+  width: 100%;
 }
+
+.Tooltip .RecentUpdate {
+  z-index: 1;
+  position: absolute;
+  top: -40px;
+  left: 35%;
+}
+
+
+
+/* Animation section */
 
 
 
@@ -679,10 +693,33 @@ z-index: 1; */
   display: flex;
   justify-content: space-between;
   position: relative;
+  align-items: center;
 }
 
-.dashedImg .Tooltip .circleImg.Active {
-  transform: scale(1.2);
+.SecondDotted .StraightLineDot {
+  position: absolute;
+  inset: 0;
+  top: 33px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.DottedAnis .RotateDashed {
+  stroke-dashoffset: 100;
+  animation: rotatecircle 2s linear infinite;
+}
+
+@keyframes rotatecircle {
+  0% {
+    stroke-dashoffset: 100;
+
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+
+  }
+
 }
 
 .dashedImg .Tooltip {
@@ -694,23 +731,26 @@ z-index: 1; */
   z-index: 1;
 }
 
+.dashedImg .dashedTitle, .UpdateMove .dashedTitle {
+  color: #1e1b1b;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: center;
+
+}
 
 .Tooltip .TooltipBox {
-  padding: 12px 10px;
+  padding: 12px 10px 10px 13px;
   position: absolute;
   display: none;
   top: 120px;
-  left: -28px;
+  left: -25px;
   width: 280px;
   background: #fff 0 0 no-repeat padding-box;
   border-radius: 4px;
   box-shadow: 0 7px 23px #00000029;
   z-index: 1;
-}
-
-
-.dashedImg .TooltipBox.LastChild {
-  left: -183px !important;
 }
 
 .dashedImg .Tooltip:hover .TooltipBox {
@@ -723,53 +763,46 @@ z-index: 1; */
   z-index: 3;
 }
 
-.TooltipBox .Tooltipcontent {
-  text-align: left;
+
+.dashedImg .TooltipBox.FirstChild {
+  top: 133px;
+  left: -25px;
 }
 
+.dashedImg .TooltipBox.LastChild {
+  left: -183px;
+}
+
+
 .TooltipBox .Tooltipheading {
+  letter-spacing: 0;
+  margin: 0;
+  text-align: left;
   color: #1e1b1b;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  padding-bottom: 3px;
 }
 
 .TooltipBox .Tooltipsubheading {
   color: #5d6065;
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 19px;
+  letter-spacing: 0;
   margin: 0;
+  text-align: left;
 }
 
-/* .SecondDotted div>p {
-  text-align: center;
-  margin: 30px 0 0 0;
-
-} */
 
 
-.dottedRow .SecondDotted:after {
-  position: absolute;
-  content: "";
-  height: 1px;
-  top: 50px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(90deg, #afafaf, 68%, transparent 0%);
-  background-repeat: repeat-x;
-  background-size: 10px 1px;
-  background-position: center;
-  animation: border 7s infinite linear;
+.UpdateMove .TooltipBox.FirstRecent {
+  top: 80px;
+  left: 158px;
 }
 
-@keyframes border {
-  0% {
-    background-position: 0px 0px;
-  }
 
-  100% {
-    background-position: 300px 0px;
-  }
-}
+
 
 
 
@@ -833,10 +866,20 @@ z-index: 1; */
 }
 
 @media (min-width:992px) and (max-width:1200px) {
-  .DottedAnis .FirstDotted .UpdateMove {
-    left: 43%;
-    top: -36px;
+
+  .Tooltip .RecentUpdate {
+    top: -26px;
+
   }
+
+  .DottedAnis .FirstDotted .UpdateMove {
+
+    top: 32px;
+
+  }
+
+
+
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -859,25 +902,22 @@ z-index: 1; */
     width: 390px !important;
   }
 
+
+
+  .Tooltip .RecentUpdate {
+
+    top: -10px;
+    left: 32%;
+  }
+
+  .UpdateMove .TooltipBox.FirstRecent {
+    top: 89px;
+    left: 102px;
+  }
+
   .DottedAnis .FirstDotted .UpdateMove {
-    left: 43%;
-    top: 8px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
+    top: 55px;
   }
-
-  .DottedCircle {
-    position: absolute;
-    left: 26px;
-    width: 100%;
-    top: 28px;
-  }
-
-
-
-
-
 
 
 }
@@ -992,6 +1032,23 @@ z-index: 1; */
     font-weight: 500;
   }
 
+
+
+
+  /* animation section */
+
+  .dashedImg .TooltipBox.FirstChild {
+    top: 133px;
+    left: -40px;
+  }
+
+  .Tooltip .TooltipBox {
+    top: 106px;
+    left: -56px;
+  }
+
+
+
   .DottedAnis .SecondDotted {
     display: flex;
     flex-direction: column;
@@ -1009,43 +1066,25 @@ z-index: 1; */
 
   .DottedAnis .FirstDotted .UpdateMove {
 
+    position: relative;
     left: 0;
+    right: 0;
+    top: 0;
   }
 
-  /* .SecondDotted {
-    height: auto;
-    width: 10px;
-    background: linear-gradient(0deg, green 50%, transparent 50%);
-    background-repeat: repeat-y;
-    background-size: 3px 10px;
-    background-position: 0px 0px;
-    padding: 10px;
-    animation: border 5s infinite linear;
+  .UpdateMove .DottedSemiCircleAnim {
+    display: none;
   }
-
-  @keyframes border {
-    0% {
-      background-position: 0px 0px;
-    }
-
-    100% {
-      background-position: 0px 300px;
-    }
-  } */
-
-
 
   .dottedRow .SecondDotted:after {
     height: auto;
     background-image: linear-gradient(0deg, #afafaf, 68%, transparent 0%);
     background-repeat: repeat-y;
     background-size: 1px 10px;
-    bottom: 0;
+    bottom: 3px;
     left: 46px;
     top: 0;
     right: 0;
-
-
   }
 
   @keyframes border {
@@ -1060,40 +1099,62 @@ z-index: 1; */
 
 
   .Tooltip .MobileAlign {
-
     display: flex;
     align-items: center;
     gap: 20px;
-
   }
 
   .dashedImg .dashedTitle {
     margin: 0;
   }
 
-  .Tooltip .TooltipBox {
-    top: 86px;
-    left: -56px;
-  }
+
 
   .dashedImg .TooltipBox.LastChild {
     left: -58px !important;
   }
 
   .UpdateMove .TooltipBox.FirstRecent {
-
     left: -86px;
   }
 
   .DottedAnis .FirstDotted {
-    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 3rem;
   }
 
-  .DottedCircle {
-    display: none;
+  .Tooltip .RecentUpdate {
+
+    position: relative;
+    top: 0;
+    left: 0;
   }
+
+  .Dottedcontent .DottedSubHeading {
+    font-size: 25px;
+    line-height: 40px;
+    max-width: 500px;
+  }
+
+  .DottedAnis .Dottedcontent {
+    margin-bottom: 20px;
+  }
+
+  .DottedAnis {
+    padding: 2.5rem 0rem;
+  }
+
+  .SecondDotted .StraightLineDot {
+    position: absolute;
+    top: 47%;
+    left: -128% !important;
+    height: 30px;
+    width: 643px;
+    transform: rotate(90deg);
+  }
+
 }
-
 
 
 

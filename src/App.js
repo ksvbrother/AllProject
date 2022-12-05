@@ -57,7 +57,7 @@ class App extends Component {
           // RiderText={this.state.ridertext}
         /> */}
 
-        <AccorditionwithSlider tab1="Rider" tab2="Driver" />
+        {/* <AccorditionwithSlider tab1="Rider" tab2="Driver" /> */}
         <Dottedline />
         {/* <TabsExample /> */}
         {/* <Checking /> */}

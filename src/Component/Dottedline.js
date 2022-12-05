@@ -1,61 +1,93 @@
 import React from "react";
 import Circle from "../img/Group_9505_1_igrazo.webp";
+
 import "../index.css";
 import { Container, Row, Col } from "react-bootstrap";
+
+const ProcessImg = [
+  " https://res.cloudinary.com/dfpzh53td/f_auto,q_auto/rentallscript-website/grocery/Group_9505_1_igrazo.svg",
+  " https://res.cloudinary.com/dfpzh53td/f_auto,q_auto/rentallscript-website/wooberly/Group_9504_zucli4.png",
+  "https://res.cloudinary.com/dfpzh53td/f_auto,q_auto/rentallscript-website/grocery/Group_9505_hjbvrn.svg",
+  " https://res.cloudinary.com/dfpzh53td/f_auto,q_auto/rentallscript-website/grocery/Group_9507_xtyrs1.svg",
+  " https://res.cloudinary.com/dfpzh53td/f_auto,q_auto/rentallscript-website/grocery/Group_9507_xtyrs1.svg",
+  " https://res.cloudinary.com/dfpzh53td/f_auto,q_auto/rentallscript-website/grocery/Group_11672_w5gen5.svg",
+];
+
 const Dottedline = () => {
   return (
     <div className="DottedAnis">
       <Container>
+        <div className="Dottedcontent">
+          <h3 className="DottedHeading">Ready, Set & Go!</h3>
+          <h4 className="DottedSubHeading">
+            How to develop an Uber clone with us?
+          </h4>
+        </div>
         <div className="dottedRow">
-          <Row>
-            <Col lg={6} sm={12} md={6}>
-              <div className="FirstDotted">
-                <div className="UpdateMove">
-                  <div className="Tooltip">
-                    <div className="RecentUpdate">
-                      <img src={Circle}></img>
-                      <p className="dashedTitle">Regular updates</p>
-                    </div>
+          <div className="FirstDotted">
+            <div className="UpdateMove">
+              <div className="Tooltip">
+                <div className="RecentUpdate">
+                  <img
+                    src={ProcessImg[0]}
+                    alt="We share regular product updates"
+                  ></img>
+                  <p className="dashedTitle">Regular updates</p>
+                </div>
 
-                    <div className="TooltipBox FirstRecent">
-                      <div className="Tooltipcontent">
-                        <h4 className="Tooltipheading">Regular updates</h4>
-                        <p className="Tooltipsubheading">
-                          Our team will share the development status of the
-                          product promptly!
-                        </p>
-                      </div>
-                    </div>
+                <div className="TooltipBox FirstRecent">
+                  <div className="Tooltipcontent">
+                    <h4 className="Tooltipheading">Regular updates</h4>
+                    <p className="Tooltipsubheading">
+                      Our team will share the development status of the product
+                      promptly!
+                    </p>
                   </div>
                 </div>
-                <svg
-                  class="DottedCircle"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="517.435"
-                  height="214.679"
-                  viewBox="0 0 517.435 214.679"
-                >
-                  <path
-                    class="circleAnim"
-                    id="Path_22043"
-                    data-name="Path 22043"
-                    d="M736.788,4203.706c-2.095-91.911-73.479-203.5-258.915-214.167-193.74,8.469-254.8,132.026-257.521,207.977"
-                    transform="translate(-219.853 -3989.038)"
-                    fill="none"
-                    stroke="#9e9e9e"
-                    stroke-width="1"
-                    stroke-dasharray="7 3"
-                  ></path>
-                </svg>
               </div>
-            </Col>
-          </Row>
+              <svg
+                width="600.435"
+                height="214.679"
+                viewBox="0 0 600.435 214.679"
+                className="DottedSemiCircleAnim"
+              >
+                <path
+                  className="RotateDashed"
+                  id="Path_22043"
+                  data-name="Path 22043"
+                  d="M736.788,4203.706c-2.095-91.911-73.479-203.5-258.915-214.167-193.74,8.469-254.8,132.026-257.521,207.977"
+                  transform="translate(-219.853 -3989.038)"
+                  fill="none"
+                  stroke="#9e9e9e"
+                  stroke-width="1"
+                  stroke-dasharray="7 3"
+                ></path>
+              </svg>
+            </div>
+          </div>
 
           <div className="SecondDotted">
+            <svg height="50" width="100%" className="StraightLineDot">
+              <line
+                x1="0"
+                y1="30"
+                x2="100%"
+                y2="30"
+                fill="none"
+                stroke="#9e9e9e"
+                stroke-width="1"
+                stroke-dasharray="7 3"
+                class="RotateDashed"
+              />
+            </svg>
             <div className="dashedImg">
               <div className="Tooltip">
                 <div className="MobileAlign">
-                  <img src={Circle} className="circleImg Active"></img>
+                  <img
+                    src={ProcessImg[1]}
+                    alt="Make an inquiry"
+                    className="circleImg Active"
+                  ></img>
                   <p className="dashedTitle">Enquire</p>
                 </div>
 
@@ -63,7 +95,7 @@ const Dottedline = () => {
                   <div className="Tooltipcontent">
                     <h4 className="Tooltipheading">Enquire</h4>
                     <p className="Tooltipsubheading">
-                      Get to know about our Multi-delivery Super App.
+                      Get to know about our Uber clone app.
                     </p>
                   </div>
                 </div>
@@ -72,7 +104,11 @@ const Dottedline = () => {
             <div className="dashedImg">
               <div className="Tooltip">
                 <div className="MobileAlign">
-                  <img src={Circle} className="circleImg"></img>
+                  <img
+                    src={ProcessImg[2]}
+                    className="circleImg"
+                    alt="Share your business ideas"
+                  ></img>
                   <p className="dashedTitle">Discover</p>
                 </div>
 
@@ -89,7 +125,11 @@ const Dottedline = () => {
             <div className="dashedImg">
               <div className="Tooltip">
                 <div className="MobileAlign">
-                  <img src={Circle} className="circleImg"></img>
+                  <img
+                    src={ProcessImg[3]}
+                    className="circleImg"
+                    alt="Coding"
+                  ></img>
                   <p className="dashedTitle">Develop</p>
                 </div>
 
@@ -97,8 +137,7 @@ const Dottedline = () => {
                   <div className="Tooltipcontent">
                     <h4 className="Tooltipheading">Develop</h4>
                     <p className="Tooltipsubheading">
-                      We begin developing your Wooberly SuperDelivery app with
-                      care!
+                      We begin developing your taxi app with care!
                     </p>
                   </div>
                 </div>
@@ -107,7 +146,11 @@ const Dottedline = () => {
             <div className="dashedImg">
               <div className="Tooltip">
                 <div className="MobileAlign">
-                  <img src={Circle} className="circleImg"></img>
+                  <img
+                    src={ProcessImg[4]}
+                    className="circleImg"
+                    alt="We test your app"
+                  ></img>
                   <p className="dashedTitle">Test</p>
                 </div>
 
@@ -124,7 +167,11 @@ const Dottedline = () => {
             <div className="dashedImg">
               <div className="Tooltip">
                 <div className="MobileAlign">
-                  <img src={Circle} className="circleImg"></img>
+                  <img
+                    src={ProcessImg[5]}
+                    className="circleImg"
+                    alt="Launching your uber clone app"
+                  ></img>
                   <p className="dashedTitle">Launch</p>
                 </div>
 
@@ -141,26 +188,6 @@ const Dottedline = () => {
           </div>
         </div>
       </Container>
-
-      {/* <svg
-        class="gcPitchCircle"
-        xmlns="http://www.w3.org/2000/svg"
-        width="517.435"
-        height="214.679"
-        viewBox="0 0 517.435 214.679"
-      >
-        <path
-          class="circleAnim"
-          id="Path_22043"
-          data-name="Path 22043"
-          d="M736.788,4203.706c-2.095-91.911-73.479-203.5-258.915-214.167-193.74,8.469-254.8,132.026-257.521,207.977"
-          transform="translate(-219.853 -3989.038)"
-          fill="none"
-          stroke="#9e9e9e"
-          stroke-width="1"
-          stroke-dasharray="7 3"
-        ></path>
-      </svg> */}
     </div>
   );
 };
