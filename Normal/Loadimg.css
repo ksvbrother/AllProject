@@ -1,0 +1,14 @@
+.loadimg {
+    width: 100%;
+    height: inherit;
+    padding-bottom: 1rem;
+}
+
+
+.img_section {
+    padding-top: 3rem;
+}
+
+.image-style {
+    background-color: gray;
+}
